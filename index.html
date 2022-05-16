@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Online Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="bodyContainer" >
+
+    <header>
+        <div class="startpagescores">
+            <a id="highscores-link">View high scores</a>
+        </div>
+        <div id="timer" class="timer">
+            Time: 75
+        </div>
+    </header>
+
+    <section id="startsection" class="startsection">
+        <h1 style="color: blue;" >Quiz Challenge</h1>
+        <p>
+            You will have 75 seconds to complete the quiz.Press the start button to begin.Any incorrect answers will decrease your time by 10 seconds.
+        </p>
+        <div class="controls">
+            <button id="start-btn" class="start-btn">Start!</button>
+        </div>
+    </section>
+
+    <section id="questionContainer" class="hide">
+        <h1 id="question">Question</h1>
+        <div id="answer-buttons" class="btncontainer">
+            <button class="btn" onclick="selectAnswer ()" >A</button>
+            <button class="btn" onclick="selectAnswer ()" >B</button>
+            <button class="btn" onclick="selectAnswer ()" >C</button>
+            <button class="btn" onclick="selectAnswer ()" >D</button>
+        </div>
+        <h2 id="checkanswer" class="correct-wrong hide"></h2>
+        <div class="controls">
+            <button id="next-btn" class="next-btn hide">Next</button>
+        </div>
+    </section>
+
+    <div id="scorecontainer" class="hide">
+        <form id="submit-form">
+            <h3 id="yourscore"></h3>
+            <label id="initials-label">Enter your initials to save the score:</label>
+            <!-- input intials, max length 10 -->
+            <input type="text" id="initialsfield" maxlength="10" placeholder="Enter your initials" />
+            <button id="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <section id="highscores" class="highscores-container hide">
+        <div id="high-scores">
+            <h1 class="centered">Leaderboard</h1>
+            <div id="highscore" class="highscore highscore-list">
+            </div>
+            <div class="controls">
+                <button id="restart-btn">Restart</button>
+                <button id="clear-btn">Clear Scores</button>
+            </div>
+        </div>
+        
+    </section>
+
+    <script src="script.js"></script>
+</div>
+</body>
+
+</html>
